@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .table01-container {
+            width: 70%;
+            margin-top: 50px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius:10px;
+            
+
+        }
+
+        table {
+            border: 1px #575757;
+            font-size: .9em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        thead {
+            font-weight: bold;
+            color: #fff;
+            background: #575757;
+        }
+
+        td,
+        th {
+            padding: 1em .5em;
+            vertical-align: middle;
+        }
+
+        td {
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+            background: #fff;
+        }
+
+        a {
+            color: #575757;
+        }
+
+        @media all and (max-width: 768px) {
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+
+            th {
+                text-align: right;
+            }
+
+            table {
+                position: relative;
+                padding-bottom: 0;
+                border: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+
+            }
+
+            thead {
+                float: left;
+                white-space: nowrap;
+            }
+
+            tbody {
+                overflow-x: auto;
+                overflow-y: hidden;
+                position: relative;
+                white-space: nowrap;
+            }
+
+            tr {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            th {
+                border-bottom: 1px solid #575757;
+            }
+
+            td {
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <div class="table01-container">
+            <div style="width:100%;display:flex;margin:10px 10px;">
+                <input type="text" placeholder="Search...."  id="myInput"
+                  style="border:none;height:40px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;width:18%;padding-left:10px;font-size:16px;border-radius:10px 0 0 10px;">
+                <button
+                  style="background-color:#575757;border:none;height:40px;width:50px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;border-radius:0 10px 10px 0;"><i
+                    class="fa fa-search" style="color:white;font-size:24px;"></i></button>
+              </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Date of Birth</th>
+
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr>
+                        <td>James</td>
+                        <td>Matman</td>
+                        <td>(713) 123-8965</td>
+                        <td><a href="mailto:jmatman@stewart.com">jmatman@stewart.com</a></td>
+                        <td>01/13/1979</td>
+                    </tr>
+                    <tr>
+                        <td>Johnny</td>
+                        <td>Smith</td>
+                        <td>(713) 584-9614</td>
+                        <td><a href="mailto:jsmith@stewart.com">jsmith@stewart.com</a></td>
+                        <td>06/09/1971</td>
+                    </tr>
+                    <tr>
+                        <td>Susan</td>
+                        <td>Johnson</td>
+                        <td>(713) 847-1124</td>
+                        <td><a href="mailto:sjohnson@stewart.com">sjohnson@stewart.com</a></td>
+                        <td>08/25/1965</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+                    <tr>
+                        <td>Tracy</td>
+                        <td>Richardson</td>
+                        <td>(713) 245-4821</td>
+                        <td><a href="mailto:trichard@stewart.com">trichard@stewart.com</a></td>
+                        <td>03/13/1980</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+</body>
+</main>
+
+</html>
